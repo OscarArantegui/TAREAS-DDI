@@ -7,20 +7,22 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
-    /* Solo modificamos el MENU en tamaño md (Tablet) */
-    @media (min-width: 768px) and (max-width: 1023.98px) {
-      .menu-md-left {
-        height: 400px; /* Mover arriba o a la izquierda */
-      }
-    }
-    @media (min-width: 768px) and (max-width: 1023.98px) {
+    
+    @media (min-width: 48em) and (max-width: 64em) { /* Tamaño md */
       .main-md-left {
-        height: 200px; /* Mover arriba o a la izquierda */
+        height: 12.5em; /* Mover arriba o a la izquierda */
+        text-align: center;
+        justify-content: center; /* Centrado horizontal */
+        align-items: center;    /* Centrado vertical */ 
+        display: flex;
+      }
+      .hero-md-left {
+        height: 12.5em;
       }
     }
-    @media (min-width: 768px) and (max-width: 1023.98px) {
-      .banner-md-left {
-        margin:-200px
+    @media (min-width: 62em) and (max-width: 75em) { /* Tamaño lg */
+      .hero-lg-left {
+        height: 15em; /* Ajusta según necesites */
       }
     }
 
@@ -30,50 +32,74 @@
       color: white; 
       padding: 20px; 
       text-align: center; 
+      justify-content: center; /* Centrado horizontal */
+      align-items: center;    /* Centrado vertical */
+      display: flex;
     }
     .menu   { 
       background: #e63946; 
       color: white; 
       padding: 20px; 
-      text-align: center; 
+      text-align: center;
+      justify-content: center; /* Centrado horizontal */
+      align-items: center;    /* Centrado vertical */ 
+      display: flex;
     }
     .hero   { 
       background: #457b9d; 
       color: white; 
       padding: 20px; 
-      text-align: center; 
+      text-align: center;
+      justify-content: center; /* Centrado horizontal */
+      align-items: center;    /* Centrado vertical */
+      display: flex; 
     }
-    .main   { background: #1d3557; color: white; padding: 20px; text-align: center; }
-    .banner { background: #f1c40f; color: black; padding: 20px; text-align: center; }
-    .extra  { background: #2a9d8f; color: white; padding: 20px; text-align: center; }
-    .image  { background: #a8dadc; color: black; padding: 20px; text-align: center; }
+    .main   { background: #1d3557; color: white; padding: 20px; text-align: center; justify-content: center; align-items: center; display: flex; }
+    .banner { background: #f1c40f; color: black; padding: 20px; text-align: center; justify-content: center; align-items: center; display: flex; }
+    .extra  { background: #2a9d8f; color: white; padding: 20px; text-align: center; justify-content: center; align-items: center; display: flex; }
+    .image  { background: #a8dadc; color: black; padding: 20px; text-align: center; justify-content: center; align-items: center; display: flex; }
   </style>
 </head>
 <body>
-
-  <div class="container">
-    <div class="row">
-      <!-- HEADER -->
-      <div class="col-12 col-md-12 col-lg-6 order-md-0 header">HEADER</div>
-
-      <!-- MENU (orden cambiado en md con CSS) -->
-      <div class="col-12 col-md-3 col-lg-6 order-md-2 menu menu-md-left">MENU</div>
-      <!-- MAIN -->
-      <div class="col-12 col-md-9 col-lg-6 order-md-3 main main-md-left">MAIN</div>
-
-      <!-- HERO -->
-      <div class="col-12 order-md-1 hero">HERO</div>
-      
-      <!-- BANNER -->
-      <div class="col-12 col-md-9 order-md-4 offset-md-3 banner ">BANNER</div>
-
-      <!-- EXTRA -->
-      <div class="col-12 col-md-6 col-lg-4 order-md-5 extra">EXTRA</div>
-
-      <!-- IMAGE -->
-      <div class="col-12 col-md-3 col-lg-3 order-md-5 image">IMAGE</div>
-    </div>
-  </div>
+        <div class="container">
+            <!-- HEADER -->
+            <div class="row">
+                <div class="col-12 col-lg-3 order-lg-0 header">HEADER</div>
+                <div class="col-12 d-sm-block d-md-none d-lg-block col-lg-9 order-lg-0 menu">MENU</div>
+            </div>
+            <div class="row">
+                <div class="col-12 order-lg-2 hero hero-md-left hero-lg-left">HERO</div>
+            </div>
+            <div class="row"><!--Tamaño tablet-->
+                <div class="col-sm-0 d-none d-md-block d-lg-none col-md-3 menu">
+                    MENU
+                </div>
+                <div class="col-sm-12 col-md-9">
+                    <div class="row">
+                        <div class="col-12 main main-md-left d-lg-none">MAIN</div>
+                        <div class="col-12 banner d-lg-none">BANNER</div>
+                        <div class="col-md-8 extra d-lg-none">EXTRA</div>
+                        <div class="col-md-4 image d-lg-none">IMAGE</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row"><!--Tamaño desktop-->
+                <div class=" d-none d-lg-block col-md-3 main">
+                    MAIN
+                </div>
+                <div class="">
+                    <div class="row image d-none offset-3 d-lg-block">
+                        <div>IMAGE</div>
+                    </div>
+                    <div class="row extra d-none offset-3 d-lg-block">
+                        <div>EXTRA</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+              <div class="banner d-none d-lg-block"> BANNER</div>
+            </div>
+        </div>
 
 </body>
 </html>
